@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatti - Studio Faraj</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tomorrow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contact-styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+    <div class="circuit-background"></div>
+    
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="assets/mylogo.PNG" alt="Studio Faraj" class="nav-logo">
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" data-en="Home" data-it="Home">Home</a></li>
+                <li><a href="about.html" data-en="About Us" data-it="Chi Siamo">Chi Siamo</a></li>
+                <li><a href="contact.html" class="active" data-en="Contact" data-it="Contatti">Contatti</a></li>
+                <li><a href="faq.html" data-en="FAQ" data-it="FAQ">FAQ</a></li>
+                <li class="language-switcher">
+                    <button id="langToggle" class="lang-btn">
+                        <img src="assets/flag-en.svg" alt="English" class="lang-flag">
+                        <span class="lang-text">EN</span>
+                    </button>
+                </li>
+            </ul>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Enhanced hero section with diagonal split and floating shapes -->
+    <section class="contact-hero">
+        <div class="hero-diagonal-bg"></div>
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title" data-en="Get In Touch" data-it="Contattaci">Contattaci</h1>
+                <p class="hero-description" data-en="Have a project in mind? We'd love to hear from you. Reach out and let's create something amazing together." data-it="Hai un progetto in mente? Ci piacerebbe sentirti. Contattaci e creiamo qualcosa di straordinario insieme.">Hai un progetto in mente? Ci piacerebbe sentirti. Contattaci e creiamo qualcosa di straordinario insieme.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modernized contact grid with enhanced card styling -->
+    <section class="contact-page-content">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2 data-en="Contact Information" data-it="Informazioni di Contatto">Informazioni di Contatto</h2>
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <div class="info-icon-circle">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3 data-en="Location" data-it="Posizione">Posizione</h3>
+                                <p>Sciacca (Ag), Italia</p>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-icon-circle">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Email</h3>
+                                <p>info@studiofaraj.com</p>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-icon-circle">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3 data-en="Phone" data-it="Telefono">Telefono</h3>
+                                <p>+39 320 222 3322</p>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-icon-circle">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3 data-en="Availability" data-it="Disponibilità">Disponibilità</h3>
+                                <p data-en="24/7 Support Available" data-it="Supporto Disponibile 24/7">Supporto Disponibile 24/7</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper">
+                    <h2 data-en="Send Us a Message" data-it="Inviaci un Messaggio">Inviaci un Messaggio</h2>
+                    <form class="contact-form" id="contactForm" action="https://formsubmit.co/el/dujepo" method="POST">
+                        <input type="hidden" name="_next" value="https://studiofaraj.com/contact.html?success=true">
+                        <input type="hidden" name="_subject" value="Nuovo messaggio dalla pagina Contatti - Studio Faraj">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="box">
+                        <input type="hidden" name="_autoresponse" value="Grazie per averci contattato! Abbiamo ricevuto il tuo messaggio e ti risponderemo al più presto. - Studio Faraj Team">
+                        <div class="form-group">
+                            <label for="name" data-en="Name" data-it="Nome">Nome</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" data-en="Message" data-it="Messaggio">Messaggio</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" data-en="Send Message" data-it="Invia Messaggio">Invia Messaggio</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New social media invitation section -->
+    <section class="social-invitation">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-en="Join Our Community" data-it="Unisciti alla Nostra Community">Unisciti alla Nostra Community</h2>
+                <p class="section-description" data-en="Follow us on social media for daily tech insights, project updates, and exclusive behind-the-scenes content." data-it="Seguici sui social media per approfondimenti tecnologici quotidiani, aggiornamenti sui progetti e contenuti esclusivi dietro le quinte.">Seguici sui social media per approfondimenti tecnologici quotidiani, aggiornamenti sui progetti e contenuti esclusivi dietro le quinte.</p>
+            </div>
+            <div class="social-cards-grid">
+                <div class="social-card facebook-card">
+                    <div class="social-card-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </div>
+                    <h3 class="social-card-title">Facebook</h3>
+                    <p class="social-card-description" data-en="Get updates on our latest projects and tech news" data-it="Ricevi aggiornamenti sui nostri ultimi progetti e notizie tecnologiche">Ricevi aggiornamenti sui nostri ultimi progetti e notizie tecnologiche</p>
+                    <a href="https://www.facebook.com/studiofaraj" target="_blank" rel="noopener noreferrer" class="social-card-btn" data-en="Follow Us" data-it="Seguici">Seguici</a>
+                </div>
+                <div class="social-card instagram-card">
+                    <div class="social-card-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <h3 class="social-card-title">Instagram</h3>
+                    <p class="social-card-description" data-en="Behind-the-scenes content and visual inspiration" data-it="Contenuti dietro le quinte e ispirazione visiva">Contenuti dietro le quinte e ispirazione visiva</p>
+                    <a href="https://www.instagram.com/studio_faraj" target="_blank" rel="noopener noreferrer" class="social-card-btn" data-en="Follow Us" data-it="Seguici">Seguici</a>
+                </div>
+                <div class="social-card tiktok-card">
+                    <div class="social-card-icon">
+                        <i class="fab fa-tiktok"></i>
+                    </div>
+                    <h3 class="social-card-title">TikTok</h3>
+                    <p class="social-card-description" data-en="Quick tech tips and creative content" data-it="Suggerimenti tecnologici rapidi e contenuti creativi">Suggerimenti tecnologici rapidi e contenuti creativi</p>
+                    <a href="https://www.tiktok.com/@studiofaraj" target="_blank" rel="noopener noreferrer" class="social-card-btn" data-en="Follow Us" data-it="Seguici">Seguici</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column footer-company">
+                    <h3 class="footer-heading">Studio Faraj</h3>
+                    <p class="footer-description" data-en="Your trusted partner for web development, AI solutions, and IT consulting in Sciacca, Agrigento." data-it="Il tuo partner di fiducia per lo sviluppo web, soluzioni AI e consulenza IT a Sciacca, Agrigento.">Il tuo partner di fiducia per lo sviluppo web, soluzioni AI e consulenza IT a Sciacca, Agrigento.</p>
+                    <div class="footer-contact-info">
+                        <p class="footer-contact-item">
+                            <span class="contact-icon">📍</span>
+                            <span class="contact-text">Sciacca (AG), Italia</span>
+                        </p>
+                        <p class="footer-contact-item">
+                            <span class="contact-icon">📧</span>
+                            <span class="contact-text">info@studiofaraj.com</span>
+                        </p>
+                        <p class="footer-contact-item">
+                            <span class="contact-icon">📱</span>
+                            <span class="contact-text">+39 320 222 3322</span>
+                        </p>
+                    </div>
+                    <div class="footer-links-section">
+                        <h4 class="footer-subheading" data-en="Quick Links" data-it="Link Rapidi">Link Rapidi</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html" data-en="Home" data-it="Home">Home</a></li>
+                            <li><a href="about.html" data-en="About Us" data-it="Chi Siamo">Chi Siamo</a></li>
+                            <li><a href="contact.html" data-en="Contact" data-it="Contatti">Contatti</a></li>
+                            <li><a href="faq.html" data-en="FAQ" data-it="FAQ">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-section">
+                        <h4 class="footer-subheading" data-en="Legal" data-it="Legale">Legale</h4>
+                        <ul class="footer-links">
+                            <li><a href="terms.html" data-en="Terms & Conditions" data-it="Termini e Condizioni">Termini e Condizioni</a></li>
+                            <li><a href="privacy.html" data-en="Privacy & Cookies" data-it="Privacy e Cookie">Privacy e Cookie</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-column footer-newsletter">
+                    <h3 class="footer-heading" data-en="Stay Connected" data-it="Resta Connesso">Resta Connesso</h3>
+                    <p class="newsletter-description" data-en="Subscribe to our newsletter for the latest updates, tech insights, and exclusive offers." data-it="Iscriviti alla nostra newsletter per gli ultimi aggiornamenti, approfondimenti tecnologici e offerte esclusive.">Iscriviti alla nostra newsletter per gli ultimi aggiornamenti, approfondimenti tecnologici e offerte esclusive.</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <div class="newsletter-input-wrapper">
+                            <input type="email" class="newsletter-input" placeholder="your@email.com" data-placeholder-en="your@email.com" data-placeholder-it="tua@email.com" required aria-label="Email address">
+                            <button type="submit" class="newsletter-button" data-en="Subscribe" data-it="Iscriviti">Iscriviti</button>
+                        </div>
+                        <p class="newsletter-privacy" data-en="We respect your privacy. Unsubscribe at any time." data-it="Rispettiamo la tua privacy. Annulla l'iscrizione in qualsiasi momento.">Rispettiamo la tua privacy. Annulla l'iscrizione in qualsiasi momento.</p>
+                    </form>
+                </div>
+                <div class="footer-column footer-social">
+                    <h3 class="footer-heading" data-en="Follow Us" data-it="Seguici">Seguici</h3>
+                    <p class="social-description" data-en="Connect with us on social media for daily inspiration and behind-the-scenes content." data-it="Connettiti con noi sui social media per ispirazione quotidiana e contenuti dietro le quinte.">Connettiti con noi sui social media per ispirazione quotidiana e contenuti dietro le quinte.</p>
+                    <div class="social-links-grid">
+                        <a href="https://www.facebook.com/studiofaraj" target="_blank" rel="noopener noreferrer" class="social-link facebook" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                            <span class="social-label">Facebook</span>
+                        </a>
+                        <a href="https://www.instagram.com/studio_faraj" target="_blank" rel="noopener noreferrer" class="social-link instagram" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                            <span class="social-label">Instagram</span>
+                        </a>
+                        <a href="https://www.tiktok.com/@studiofaraj" target="_blank" rel="noopener noreferrer" class="social-link tiktok" aria-label="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                            <span class="social-label">TikTok</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright" data-en="&copy; 2025 Studio Faraj. All rights reserved." data-it="&copy; 2025 Studio Faraj. Tutti i diritti riservati.">&copy; 2025 Studio Faraj. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
