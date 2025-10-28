@@ -15,109 +15,121 @@
     <!-- Updated background to match about.html modern design -->
     <div class="animated-background"></div>
     
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container nav-layout">
-            <div class="nav-brand">
-                <img src="assets/mylogo.PNG" alt="Studio Faraj" class="nav-logo">
-                <div class="brand-text">
-                    <span class="brand-name" data-en="Studio Faraj" data-it="Studio Faraj">Studio Faraj</span>
-                    <span class="brand-tagline" data-en="Digital Studio · Sciacca" data-it="Studio Digitale · Sciacca">Studio Digitale · Sciacca</span>
+    <header class="hero-header">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="container nav-layout">
+                <div class="nav-brand">
+                    <img src="assets/mylogo.PNG" alt="Studio Faraj" class="nav-logo">
+                    <div class="brand-text">
+                        <span class="brand-name" data-en="Studio Faraj" data-it="Studio Faraj">Studio Faraj</span>
+                        <span class="brand-tagline" data-en="Digital Studio · Sciacca" data-it="Studio Digitale · Sciacca">Studio Digitale · Sciacca</span>
+                    </div>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link active" data-en="Home" data-it="Home">Home</a></li>
+                    <li><a href="about.html" class="nav-link" data-en="About Us" data-it="Chi Siamo">Chi Siamo</a></li>
+                    <li><a href="contact.html" class="nav-link" data-en="Contact" data-it="Contatti">Contatti</a></li>
+                    <li><a href="faq.html" class="nav-link" data-en="FAQ" data-it="FAQ">FAQ</a></li>
+                    <li class="language-switcher">
+                        <button id="langToggle" class="lang-btn">
+                            <img src="assets/flag-en.svg" alt="English" class="lang-flag">
+                            <span class="lang-text">EN</span>
+                        </button>
+                    </li>
+                    <li class="nav-cta-item">
+                        <a href="#contact" class="nav-cta" data-en="Let's Talk" data-it="Parliamo">Parliamo</a>
+                    </li>
+                </ul>
+                <div class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
             </div>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html" class="nav-link active" data-en="Home" data-it="Home">Home</a></li>
-                <li><a href="about.html" class="nav-link" data-en="About Us" data-it="Chi Siamo">Chi Siamo</a></li>
-                <li><a href="contact.html" class="nav-link" data-en="Contact" data-it="Contatti">Contatti</a></li>
-                <li><a href="faq.html" class="nav-link" data-en="FAQ" data-it="FAQ">FAQ</a></li>
-                <li class="language-switcher">
-                    <button id="langToggle" class="lang-btn">
-                        <img src="assets/flag-en.svg" alt="English" class="lang-flag">
-                        <span class="lang-text">EN</span>
-                    </button>
-                </li>
-                <li class="nav-cta-item">
-                    <a href="#contact" class="nav-cta" data-en="Let's Talk" data-it="Parliamo">Parliamo</a>
-                </li>
-            </ul>
-            <div class="nav-toggle" id="navToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+        </nav>
 
-    <!-- Updated hero section with modern diagonal design and floating shapes -->
-    <section class="hero page-hero-diagonal">
-        <div class="hero-decorations">
-            <div class="floating-shape floating-shape-1"></div>
-            <div class="floating-shape floating-shape-2"></div>
-            <div class="floating-shape floating-shape-3"></div>
-        </div>
-        <div class="particle-container">
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-        </div>
-        <div class="container">
-            <div class="hero-diagonal-content">
-                <div class="hero-text-side">
-                    <h1 class="hero-title-modern animate-fade-in" data-en="Transform Your Digital Vision Into Reality" data-it="Trasforma la Tua Visione Digitale in Realtà">Trasforma la Tua Visione Digitale in Realtà</h1>
-                    <p class="hero-description-modern animate-fade-in-delay" data-en="We craft cutting-edge web solutions, AI-powered automations, and comprehensive IT services that propel your business into the future. With lightning-fast delivery and 24/7 support, we're your trusted technology partner in Sciacca, Agrigento." data-it="Creiamo soluzioni web all'avanguardia, automazioni basate sull'intelligenza artificiale e servizi IT completi che spingono la tua azienda verso il futuro. Con consegne rapidissime e supporto 24/7, siamo il tuo partner tecnologico di fiducia a Sciacca, Agrigento.">Creiamo soluzioni web all'avanguardia, automazioni basate sull'intelligenza artificiale e servizi IT completi che spingono la tua azienda verso il futuro. Con consegne rapidissime e supporto 24/7, siamo il tuo partner tecnologico di fiducia a Sciacca, Agrigento.</p>
-                    <div class="hero-cta-buttons">
-                        <a href="#contact" class="btn-hero btn-hero-primary animate-fade-in-delay-2" data-en="Get Started" data-it="Inizia Ora">Inizia Ora</a>
-                        <a href="about.html" class="btn-hero btn-hero-secondary animate-fade-in-delay-2" data-en="Learn More" data-it="Scopri di Più">Scopri di Più</a>
-                    </div>
-                </div>
-                <div class="hero-visual-side">
-                    <div class="floating-shapes">
-                        <div class="shape shape-1"></div>
-                        <div class="shape shape-2"></div>
-                        <div class="shape shape-3"></div>
-                    </div>
-                    <div class="trust-indicators">
-                        <div class="trust-stats">
-                            <div class="trust-stat-item">
-                                <div class="trust-icon">
+        <!-- Updated hero section with modern diagonal design and floating shapes -->
+        <section class="hero page-hero-diagonal">
+            <div class="hero-decorations">
+                <div class="floating-shape floating-shape-1"></div>
+                <div class="floating-shape floating-shape-2"></div>
+                <div class="floating-shape floating-shape-3"></div>
+            </div>
+            <div class="particle-container">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+            </div>
+            <div class="container">
+                <div class="hero-diagonal-content">
+                    <div class="hero-text-side">
+                        <span class="hero-kicker" data-en="Web · AI · IT Studio" data-it="Studio Web · AI · IT">Studio Web · AI · IT</span>
+                        <h1 class="hero-title-modern animate-fade-in" data-en="Transform Your Digital Vision Into Reality" data-it="Trasforma la Tua Visione Digitale in Realtà">Trasforma la Tua Visione Digitale in Realtà</h1>
+                        <p class="hero-description-modern animate-fade-in-delay" data-en="We craft cutting-edge web solutions, AI-powered automations, and comprehensive IT services that propel your business into the future. With lightning-fast delivery and 24/7 support, we're your trusted technology partner in Sciacca, Agrigento." data-it="Creiamo soluzioni web all'avanguardia, automazioni basate sull'intelligenza artificiale e servizi IT completi che spingono la tua azienda verso il futuro. Con consegne rapidissime e supporto 24/7, siamo il tuo partner tecnologico di fiducia a Sciacca, Agrigento.">Creiamo soluzioni web all'avanguardia, automazioni basate sull'intelligenza artificiale e servizi IT completi che spingono la tua azienda verso il futuro. Con consegne rapidissime e supporto 24/7, siamo il tuo partner tecnologico di fiducia a Sciacca, Agrigento.</p>
+                        <div class="hero-cta-buttons">
+                            <a href="#contact" class="btn-hero btn-hero-primary animate-fade-in-delay-2" data-en="Get Started" data-it="Inizia Ora">Inizia Ora</a>
+                            <a href="about.html" class="btn-hero btn-hero-secondary animate-fade-in-delay-2" data-en="Learn More" data-it="Scopri di Più">Scopri di Più</a>
+                        </div>
+                        <div class="hero-metrics-grid">
+                            <div class="hero-metric-card">
+                                <div class="hero-metric-icon">
                                     <i class="fas fa-check-circle"></i>
                                 </div>
-                                <div class="trust-text">
-                                    <span class="trust-number" data-en="150+" data-it="150+">150+</span>
-                                    <span class="trust-label" data-en="Projects Delivered" data-it="Progetti Consegnati">Progetti Consegnati</span>
+                                <div class="hero-metric-text">
+                                    <span class="hero-metric-value" data-en="150+" data-it="150+">150+</span>
+                                    <span class="hero-metric-label" data-en="Projects Delivered" data-it="Progetti Consegnati">Progetti Consegnati</span>
                                 </div>
                             </div>
-                            <div class="trust-stat-item">
-                                <div class="trust-icon">
+                            <div class="hero-metric-card">
+                                <div class="hero-metric-icon">
                                     <i class="fas fa-clock"></i>
                                 </div>
-                                <div class="trust-text">
-                                    <span class="trust-number" data-en="24/7" data-it="24/7">24/7</span>
-                                    <span class="trust-label" data-en="Support Available" data-it="Supporto Disponibile">Supporto Disponibile</span>
+                                <div class="hero-metric-text">
+                                    <span class="hero-metric-value" data-en="24/7" data-it="24/7">24/7</span>
+                                    <span class="hero-metric-label" data-en="Support Available" data-it="Supporto Disponibile">Supporto Disponibile</span>
                                 </div>
                             </div>
-                            <div class="trust-stat-item">
-                                <div class="trust-icon">
+                            <div class="hero-metric-card">
+                                <div class="hero-metric-icon">
                                     <i class="fas fa-star"></i>
                                 </div>
-                                <div class="trust-text">
-                                    <span class="trust-number" data-en="100%" data-it="100%">100%</span>
-                                    <span class="trust-label" data-en="Client Satisfaction" data-it="Soddisfazione Clienti">Soddisfazione Clienti</span>
+                                <div class="hero-metric-text">
+                                    <span class="hero-metric-value" data-en="100%" data-it="100%">100%</span>
+                                    <span class="hero-metric-label" data-en="Client Satisfaction" data-it="Soddisfazione Clienti">Soddisfazione Clienti</span>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-visual-side">
+                        <div class="floating-shapes">
+                            <div class="shape shape-1"></div>
+                            <div class="shape shape-2"></div>
+                            <div class="shape shape-3"></div>
+                        </div>
+                        <div class="hero-showcase-card">
+                            <span class="hero-showcase-label" data-en="What we deliver" data-it="Cosa realizziamo">Cosa realizziamo</span>
+                            <h2 class="hero-showcase-title" data-en="A digital ecosystem tailored to your business" data-it="Un ecosistema digitale su misura per la tua azienda">Un ecosistema digitale su misura per la tua azienda</h2>
+                            <p class="hero-showcase-description" data-en="Modular services that grow with you: from fast landing pages to integrated platforms with automations." data-it="Servizi modulari che crescono con te: dalle landing page rapide alle piattaforme integrate con automazioni.">Servizi modulari che crescono con te: dalle landing page rapide alle piattaforme integrate con automazioni.</p>
+                            <div class="hero-showcase-tags">
+                                <span class="hero-tag-pill" data-en="Web Design" data-it="Web Design">Web Design</span>
+                                <span class="hero-tag-pill" data-en="E-commerce" data-it="E-commerce">E-commerce</span>
+                                <span class="hero-tag-pill" data-en="Automations" data-it="Automazioni">Automazioni</span>
+                                <span class="hero-tag-pill" data-en="Branding" data-it="Branding">Branding</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </header>
 
     <!-- Services -->
     <section class="services">
