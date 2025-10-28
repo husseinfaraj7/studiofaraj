@@ -903,6 +903,9 @@ h6 {
   --scroll-duration: 48s;
   display: flex;
   gap: 2.5rem;
+  --scroll-duration: 60s;
+  display: flex;
+  gap: 3rem;
   animation: scroll var(--scroll-duration) linear infinite;
   animation-fill-mode: both;
   width: fit-content;
@@ -986,6 +989,7 @@ h6 {
 @media (max-width: 768px) {
   .tools-scroll-track {
     --scroll-duration: 30s;
+    --scroll-duration: 40s;
     gap: 2rem;
   }
 
@@ -1021,6 +1025,7 @@ h6 {
 @media (max-width: 480px) {
   .tools-scroll-track {
     --scroll-duration: 22s;
+    --scroll-duration: 28s;
     gap: 1.5rem;
   }
 
