@@ -8064,7 +8064,7 @@ h6 {
 
 .hero-metric-card {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 1rem;
   padding: 1.25rem 1.35rem;
   background: linear-gradient(135deg, rgba(12, 23, 45, 0.9), rgba(8, 16, 32, 0.65));
@@ -8078,6 +8078,9 @@ h6 {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
+  flex: 1 1 15rem;
+  min-width: 0;
+  max-width: clamp(15rem, 20vw, 18.5rem);
 }
 
 .hero-metric-icon {
@@ -8108,14 +8111,16 @@ h6 {
 .hero-visual-side {
   position: relative;
   display: flex;
-  align-items: stretch;
+  align-items: flex-start;
   justify-content: center;
+  padding-top: clamp(0.5rem, 1.8vw, 1.35rem);
 }
 
 .hero-showcase-card {
   position: relative;
-  width: min(420px, 100%);
-  padding: clamp(2rem, 4vw, 2.75rem);
+  width: min(440px, 100%);
+  padding: clamp(2.35rem, 4.5vw, 3rem);
+  padding-bottom: clamp(3.5rem, 6vw, 4.25rem);
   border-radius: 26px;
   background: linear-gradient(145deg, rgba(16, 33, 63, 0.95), rgba(8, 18, 36, 0.75));
   border: 1px solid rgba(64, 224, 208, 0.2);
@@ -8125,6 +8130,8 @@ h6 {
   flex-direction: column;
   gap: 1.75rem;
   z-index: 1;
+  top: clamp(-6rem, -11vw, -2.75rem);
+  margin-top: 0;
 }
 
 .hero-showcase-header {
@@ -8318,7 +8325,7 @@ h6 {
 
   .hero-showcase-card {
     width: 100%;
-    margin-top: 0.75rem;
+    top: 0;
   }
 
   .hero-showcase-features {
@@ -8337,6 +8344,11 @@ h6 {
 
   .hero-text-side {
     gap: 1.5rem;
+  }
+
+  .hero-metric-text {
+    flex: 1 1 auto;
+    min-width: 0;
   }
 
   .hero-title-modern {
@@ -8358,7 +8370,7 @@ h6 {
 
   .hero-showcase-card {
     padding: 1.9rem;
-    margin-top: 0;
+    top: 0;
   }
 
   .hero-showcase-features {
