@@ -8323,7 +8323,7 @@ h6 {
 
   .hero-showcase-card {
     width: 100%;
-    margin-top: 0.75rem;
+    top: 0;
   }
 
   .hero-showcase-features {
@@ -8367,7 +8367,7 @@ h6 {
 
   .hero-showcase-card {
     padding: 1.9rem;
-    margin-top: 0;
+    top: 0;
   }
 
   .hero-showcase-features {
