@@ -8022,7 +8022,7 @@ h6 {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(2.5rem, 6vw, 4.5rem);
-  align-items: center;
+  align-items: stretch;
 }
 
 .hero-text-side {
@@ -8110,8 +8110,9 @@ h6 {
 .hero-visual-side {
   position: relative;
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
   padding-top: clamp(0.5rem, 1.8vw, 1.35rem);
 }
 
@@ -8129,7 +8130,7 @@ h6 {
   flex-direction: column;
   gap: 1.75rem;
   z-index: 1;
-  margin-top: 100px;
+  flex: 1;
 }
 
 .hero-showcase-header {
@@ -8317,6 +8318,7 @@ h6 {
   }
 
   .hero-visual-side {
+    align-items: stretch;
     justify-content: flex-start;
     padding-top: 0.5rem;
   }
