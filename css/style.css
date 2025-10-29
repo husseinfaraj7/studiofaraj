@@ -8078,6 +8078,8 @@ h6 {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
+  flex: 1;
+  min-width: clamp(9rem, 12vw, 11rem);
 }
 
 .hero-metric-icon {
@@ -8108,14 +8110,16 @@ h6 {
 .hero-visual-side {
   position: relative;
   display: flex;
-  align-items: stretch;
+  align-items: flex-start;
   justify-content: center;
+  padding-top: clamp(0.5rem, 1.8vw, 1.35rem);
 }
 
 .hero-showcase-card {
   position: relative;
-  width: min(420px, 100%);
+  width: min(440px, 100%);
   padding: clamp(2rem, 4vw, 2.75rem);
+  padding-bottom: clamp(2.25rem, 4.5vw, 3rem);
   border-radius: 26px;
   background: linear-gradient(145deg, rgba(16, 33, 63, 0.95), rgba(8, 18, 36, 0.75));
   border: 1px solid rgba(64, 224, 208, 0.2);
@@ -8125,6 +8129,7 @@ h6 {
   flex-direction: column;
   gap: 1.75rem;
   z-index: 1;
+  margin-top: clamp(-1.25rem, -2.5vw, -0.85rem);
 }
 
 .hero-showcase-header {
@@ -8337,6 +8342,10 @@ h6 {
 
   .hero-text-side {
     gap: 1.5rem;
+  }
+
+  .hero-metric-text {
+    min-width: unset;
   }
 
   .hero-title-modern {
