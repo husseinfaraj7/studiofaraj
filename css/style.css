@@ -8129,7 +8129,7 @@ h6 {
   flex-direction: column;
   gap: 1.75rem;
   z-index: 1;
-  margin-top: clamp(-1.25rem, -2.5vw, -0.85rem);
+  margin-top: 100px;
 }
 
 .hero-showcase-header {
