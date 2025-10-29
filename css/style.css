@@ -8525,7 +8525,6 @@ h6 {
   background: radial-gradient(circle at 20% -10%, rgba(64, 224, 208, 0.18), transparent 55%),
     radial-gradient(circle at 85% 0%, rgba(32, 178, 170, 0.25), transparent 60%),
     linear-gradient(180deg, rgba(7, 12, 26, 0.95) 0%, rgba(10, 20, 38, 0.85) 45%, rgba(10, 20, 38, 0.65) 100%);
-  overflow: hidden;
   isolation: isolate;
 }
 
