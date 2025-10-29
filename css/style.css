@@ -8064,7 +8064,7 @@ h6 {
 
 .hero-metric-card {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 1rem;
   padding: 1.25rem 1.35rem;
   background: linear-gradient(135deg, rgba(12, 23, 45, 0.9), rgba(8, 16, 32, 0.65));
