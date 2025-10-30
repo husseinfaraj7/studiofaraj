@@ -1,0 +1,42 @@
+/* Hero Section Opacity Enhancements */
+
+/* Increased hero content background opacity from 0.05 to 0.15 for better visibility */
+.hero-content {
+  background: rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Increased floating shape opacity from 0.15 to 0.3 */
+.hero::before,
+.hero::after {
+  background: radial-gradient(circle, rgba(40, 225, 232, 0.3), transparent 70%) !important;
+}
+
+/* Increased page-hero-diagonal background gradient opacity */
+.page-hero-diagonal {
+  background: linear-gradient(135deg, rgba(64, 224, 208, 0.2) 0%, rgba(32, 178, 170, 0.15) 100%) !important;
+}
+
+/* Increased diagonal overlay opacity from 0.1 to 0.2 */
+.page-hero-diagonal::before {
+  background: linear-gradient(45deg, transparent 40%, rgba(64, 224, 208, 0.2) 50%, transparent 60%) !important;
+}
+
+/* Increased floating shapes opacity for better visibility */
+.shape-1 {
+  background: linear-gradient(135deg, rgba(64, 224, 208, 0.5), rgba(32, 178, 170, 0.4)) !important;
+}
+
+.shape-2 {
+  background: linear-gradient(135deg, rgba(32, 178, 170, 0.5), rgba(64, 224, 208, 0.4)) !important;
+}
+
+.shape-3 {
+  background: linear-gradient(135deg, rgba(64, 224, 208, 0.6), rgba(32, 178, 170, 0.5)) !important;
+}
+
+/* Increased hero decorations opacity */
+.hero-decorations .floating-shape {
+  opacity: 0.4 !important;
+}

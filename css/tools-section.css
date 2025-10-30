@@ -1,0 +1,162 @@
+/* Creating a separate CSS file for tools section to avoid conflicts with other sections */
+
+/* Tools Section - Infinite Scroll with Hover Effects */
+.tools {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, rgba(1, 8, 18, 0.95) 0%, rgba(6, 20, 38, 0.98) 100%);
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.tools-scroll-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 2rem 0;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.tools-scroll-track {
+  --scroll-duration: 60s;
+  display: flex;
+  gap: 2.5rem;
+  animation: toolsScroll var(--scroll-duration) cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  animation-fill-mode: both;
+  width: fit-content;
+}
+
+.tools-scroll-track:hover {
+  animation-play-state: paused;
+}
+
+/* Scoped tool-item styles to only affect tools section */
+.tools .tool-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  min-width: 140px;
+  padding: 1.5rem;
+  background: rgba(7, 18, 32, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(5, 15, 30, 0.45);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(2px);
+}
+
+.tools .tool-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(40, 225, 232, 0.15), transparent);
+  transition: left 0.45s;
+}
+
+.tools .tool-item:hover::before {
+  left: 100%;
+}
+
+.tools .tool-item:hover {
+  transform: translateY(-8px) scale(1.03);
+  border-color: rgba(40, 225, 232, 0.6);
+  background: rgba(10, 24, 42, 0.95);
+  box-shadow: 0 16px 36px rgba(9, 29, 52, 0.55);
+}
+
+.tools .tool-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.35));
+  transition: all 0.3s ease;
+}
+
+.tools .tool-item:hover img {
+  filter: drop-shadow(0 0 12px rgba(40, 225, 232, 0.45));
+  transform: scale(1.05);
+}
+
+.tools .tool-item span {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: rgba(230, 239, 255, 0.92);
+  text-align: center;
+  letter-spacing: 0.4px;
+}
+
+/* Renamed animation to avoid conflicts */
+@keyframes toolsScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Cleaned up responsive styles - removed duplicates */
+@media (max-width: 768px) {
+  .tools-scroll-track {
+    --scroll-duration: 75s;
+    gap: 2rem;
+  }
+
+  .tools-scroll-container {
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  }
+
+  .tools .tool-item {
+    min-width: 120px;
+    padding: 1.25rem;
+  }
+
+  .tools .tool-item img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .tools .tool-item span {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tools-scroll-track {
+    --scroll-duration: 85s;
+    gap: 1rem;
+    animation-play-state: running;
+  }
+
+  .tools-scroll-track:hover {
+    animation-play-state: running;
+  }
+
+  .tools-scroll-container {
+    mask-image: linear-gradient(to right, transparent, black 3%, black 97%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 3%, black 97%, transparent);
+  }
+
+  .tools .tool-item {
+    min-width: 110px;
+    padding: 1rem;
+  }
+
+  .tools .tool-item img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .tools .tool-item span {
+    font-size: 0.8rem;
+  }
+}
