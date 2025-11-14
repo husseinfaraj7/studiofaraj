@@ -97,7 +97,7 @@ faqItems.forEach((item) => {
 
 // Contact Form Submission
 const contactForm = document.getElementById("contactForm")
-if (contactForm) {
+if (contactForm && contactForm.dataset.ajax === "true") {
   const submitButton = contactForm.querySelector('button[type="submit"]')
   const originalButtonText = {
     it: submitButton.getAttribute("data-it") || "Invia Messaggio",
