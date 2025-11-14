@@ -7743,6 +7743,56 @@ h6 {
   display: none;
 }
 
+.hero.page-hero-diagonal .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-diagonal-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-text-side,
+.hero-visual-side {
+  flex: 1 1 50%;
+}
+
+.hero-text-side {
+  max-width: 640px;
+}
+
+.hero-visual-side {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+}
+
+.hero-text-side .hero-cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-start;
+}
+
+.hero-text-side .hero-cta-buttons .btn-hero {
+  min-width: 180px;
+}
+
+.hero-title-modern {
+  color: #7fffd4;
+  background-image: linear-gradient(120deg, #7fffd4 0%, #40c9ff 45%, #a855f7 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.15;
+}
+
 /* Enhanced project counter with modern styling */
 .projects-completed-banner {
   margin: 3rem 0 4rem;
@@ -7807,14 +7857,24 @@ h6 {
     padding: 4rem 0 3rem;
   }
 
+  .hero.page-hero-diagonal .container {
+    padding-top: 1.5rem;
+  }
+
   .hero-diagonal-content {
     flex-direction: column;
     gap: 2rem;
+    align-items: center;
+    text-align: center;
   }
 
   .hero-text-side,
   .hero-visual-side {
     flex: 1 1 100%;
+  }
+
+  .hero-text-side {
+    max-width: 100%;
   }
 
   .hero-title-modern {
@@ -7825,8 +7885,18 @@ h6 {
     font-size: 1.1rem;
   }
 
+  .hero-text-side .hero-cta-buttons {
+    justify-content: center;
+  }
+
+  .hero-text-side .hero-cta-buttons .btn-hero {
+    width: 100%;
+    max-width: 320px;
+  }
+
   .hero-visual-side {
-    height: 250px;
+    height: 220px;
+    min-height: 220px;
   }
 
   .floating-shape-1 {
@@ -7854,12 +7924,24 @@ h6 {
 }
 
 @media (max-width: 480px) {
+  .hero.page-hero-diagonal {
+    padding: 3.5rem 0 2.5rem;
+  }
+
+  .hero.page-hero-diagonal .container {
+    padding: 0 1.25rem;
+  }
+
   .hero-title-modern {
     font-size: 2rem;
   }
 
   .hero-description-modern {
     font-size: 1rem;
+  }
+
+  .hero-text-side .hero-cta-buttons {
+    gap: 0.75rem;
   }
 
   .counter-number {
