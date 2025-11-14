@@ -96,158 +96,115 @@ faqItems.forEach((item) => {
 })
 
 // Contact Form Submission
-const formsubmitForms = document.querySelectorAll('form[data-formsubmit][data-ajax="true"]')
-
-if (formsubmitForms.length > 0) {
-  formsubmitForms.forEach((form) => {
-    const submitButton = form.querySelector('button[type="submit"]')
-    if (!submitButton) {
-      return
-    }
-
-    const originalButtonText = {
-      it: submitButton.getAttribute("data-it") || submitButton.textContent.trim() || "Invia Messaggio",
-      en: submitButton.getAttribute("data-en") || submitButton.textContent.trim() || "Send Message",
-    }
-
-    form.addEventListener("submit", async (event) => {
-      event.preventDefault()
-
-      const formData = new FormData(form)
-      const honeypotFieldName = form.dataset.honeypot || "_honey"
-
-      if (honeypotFieldName && formData.get(honeypotFieldName)) {
-        form.reset()
-        return
-      }
-
-      if (honeypotFieldName) {
-        formData.delete(honeypotFieldName)
-      }
-
-      const existingStatus = form.querySelector(".form-status-message")
-      if (existingStatus) {
-        existingStatus.remove()
-      }
-
-      submitButton.disabled = true
-      submitButton.classList.add("loading")
-
-      const loadingText = {
-        it: "Invio in corso...",
-        en: "Sending...",
-      }
-      submitButton.textContent = loadingText[currentLang] || loadingText.it
-
-      const emailField = form.querySelector('input[type="email"], input[name="email"], input[name="_replyto"]')
-      if (emailField) {
-        const emailValue = emailField.value.trim()
-        if (emailValue) {
-          formData.set(emailField.name, emailValue)
-          if (emailField.name !== "_replyto") {
-            formData.set("_replyto", emailValue)
-          }
-          if (emailField.name !== "email") {
-            formData.set("email", emailValue)
-          }
-        }
-      }
-
-      try {
-        const ajaxEndpoint = form.dataset.ajaxAction || deriveAjaxAction(form.action)
-        const response = await fetch(ajaxEndpoint, {
-          method: "POST",
-          body: formData,
-          headers: {
-            Accept: "application/json",
-          },
-        })
-
-        if (!response.ok) {
-          throw new Error(`FormSubmit responded with status ${response.status}`)
-        }
-
-        let payload
-        try {
-          payload = await response.json()
-        } catch (parseError) {
-          throw new Error("Unable to parse FormSubmit response")
-        }
-
-        const submissionSucceeded = payload && (payload.success === true || payload.success === "true")
-        if (!submissionSucceeded) {
-          throw new Error("FormSubmit reported an error")
-        }
-
-        showFormStatus(form, "success")
-        form.reset()
-      } catch (error) {
-        console.error("Form submission error:", error)
-        showFormStatus(form, "error")
-      } finally {
-        submitButton.disabled = false
-        submitButton.classList.remove("loading")
-        submitButton.textContent = originalButtonText[currentLang] || originalButtonText.it
-      }
-    })
-  })
-}
-
-function deriveAjaxAction(action) {
-  try {
-    const url = new URL(action, window.location.origin)
-    if (!url.pathname.startsWith("/ajax")) {
-      url.pathname = `/ajax${url.pathname}`
-    }
-    return url.toString()
-  } catch (error) {
-    console.error("Unable to compute FormSubmit AJAX endpoint:", error)
-    return action
-  }
-}
-
-function showFormStatus(form, type) {
-  const statusMessages = {
-    success: {
-      it: "Messaggio inviato con successo! Ti risponderemo presto.",
-      en: "Message sent successfully! We'll get back to you soon.",
-    },
-    error: {
-      it: "Si è verificato un errore. Riprova più tardi.",
-      en: "An error occurred. Please try again later.",
-    },
+const contactForm = document.getElementById("contactForm")
+if (contactForm && contactForm.dataset.ajax === "true") {
+  const submitButton = contactForm.querySelector('button[type="submit"]')
+  const originalButtonText = {
+    it: submitButton.getAttribute("data-it") || "Invia Messaggio",
+    en: submitButton.getAttribute("data-en") || "Send Message",
   }
 
-  const statusDiv = document.createElement("div")
-  statusDiv.className = `form-status-message ${type}`
+  contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault()
 
-  const iconSpan = document.createElement("span")
-  iconSpan.className = "status-icon"
-  iconSpan.textContent = type === "success" ? "✓" : "✕"
+    const name = document.getElementById("name").value
+    const email = document.getElementById("email").value
+    const message = document.getElementById("message").value
 
-  const textSpan = document.createElement("span")
-  textSpan.className = "status-text"
-  textSpan.setAttribute("data-it", statusMessages[type].it)
-  textSpan.setAttribute("data-en", statusMessages[type].en)
-  textSpan.textContent = statusMessages[type][currentLang] || statusMessages[type].it
+    // Remove any existing status messages
+    const existingStatus = contactForm.querySelector(".form-status-message")
+    if (existingStatus) {
+      existingStatus.remove()
+    }
 
-  statusDiv.appendChild(iconSpan)
-  statusDiv.appendChild(textSpan)
+    // Disable submit button and show loading state
+    submitButton.disabled = true
+    submitButton.classList.add("loading")
 
-  form.appendChild(statusDiv)
+    const loadingText = {
+      it: "Invio in corso...",
+      en: "Sending...",
+    }
+    submitButton.textContent = loadingText[currentLang]
 
-  requestAnimationFrame(() => {
-    statusDiv.classList.add("show")
+    try {
+      // Simulate API call (replace with actual FormSubmit or API endpoint)
+      await new Promise((resolve) => setTimeout(resolve, 2000))
+
+      // Uncomment below for actual FormSubmit integration:
+      // const response = await fetch('https://formsubmit.co/YOUR_EMAIL', {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify({ name, email, message })
+      // })
+      // if (!response.ok) throw new Error('Submission failed')
+
+      // Show success message
+      showFormStatus("success")
+
+      // Reset form after short delay
+      setTimeout(() => {
+        contactForm.reset()
+      }, 1000)
+    } catch (error) {
+      // Show error message
+      showFormStatus("error")
+      console.error("Form submission error:", error)
+    } finally {
+      // Re-enable submit button
+      submitButton.disabled = false
+      submitButton.classList.remove("loading")
+      submitButton.textContent = originalButtonText[currentLang]
+    }
   })
 
-  setTimeout(() => {
-    statusDiv.classList.remove("show")
+  function showFormStatus(type) {
+    const statusMessages = {
+      success: {
+        it: "Messaggio inviato con successo! Ti risponderemo presto.",
+        en: "Message sent successfully! We'll get back to you soon.",
+      },
+      error: {
+        it: "Si è verificato un errore. Riprova più tardi.",
+        en: "An error occurred. Please try again later.",
+      },
+    }
+
+    // Create status message element
+    const statusDiv = document.createElement("div")
+    statusDiv.className = `form-status-message ${type}`
+
+    const iconSpan = document.createElement("span")
+    iconSpan.className = "status-icon"
+    iconSpan.textContent = type === "success" ? "✓" : "✕"
+
+    const textSpan = document.createElement("span")
+    textSpan.className = "status-text"
+    textSpan.setAttribute("data-it", statusMessages[type].it)
+    textSpan.setAttribute("data-en", statusMessages[type].en)
+    textSpan.textContent = statusMessages[type][currentLang]
+
+    statusDiv.appendChild(iconSpan)
+    statusDiv.appendChild(textSpan)
+
+    // Insert after form
+    contactForm.appendChild(statusDiv)
+
+    // Trigger animation
     setTimeout(() => {
-      if (statusDiv.parentNode) {
-        statusDiv.remove()
-      }
-    }, 300)
-  }, 5000)
+      statusDiv.classList.add("show")
+    }, 10)
+
+    // Auto-remove after 5 seconds
+    setTimeout(() => {
+      statusDiv.classList.remove("show")
+      setTimeout(() => {
+        if (statusDiv.parentNode) {
+          statusDiv.remove()
+        }
+      }, 300)
+    }, 5000)
+  }
 }
 
 // Smooth Scroll for Anchor Links
